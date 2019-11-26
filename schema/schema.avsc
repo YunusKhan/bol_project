@@ -1,0 +1,31 @@
+{"namespace": "com.bol.weather.sample.schema.avro",
+
+ "type": "record",
+
+ "name": "weather",
+
+ "fields": [
+
+     {"name": "DR",   "type": "int"},
+
+     {"name": "TN",   "type": "int"},
+
+     {"name": "STN",       "type": "int"},
+
+     {"name": "SP",   "type": "int"},
+
+     {"name": "TG",   "type": "int"},
+
+     {"name": "YYYYMMDD",       "type": "string"},
+
+     {"name": "TX",   "type": "int"},
+
+     {"name": "RH",   "type": "int"},
+
+     {"name": "SQ",   "type": "int"},
+
+     {"name": "RHX",   "type": "int"}
+     
+ ]
+
+}
