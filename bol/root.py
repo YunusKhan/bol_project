@@ -155,18 +155,18 @@ def stream_whole_data_set():
     # sorry for this incorrect way of making it work
     # but due to time constraints this is being done that way
 
-    try:
+    '''try:
         ret_code = kcon.get_message_from_consumer(consumer)
     except ValueError as e:
         logging.debug("Unable to consume messages, check kafka logs , %s" % e)
-
+'''
     if ret_code == constants.ALL_OK:
         logging.debug("Consumer successfully sent message")
     else:
         logging.debug("Consumer not successfully consumed messages, check kafka logs")
 
     # while True:
-    for msg in consumer:
+    """for msg in consumer:
         if not msg:
             consumer.stop()
         tempdata = dill.loads(msg.value)
@@ -174,7 +174,7 @@ def stream_whole_data_set():
         dfnew = dftemp.to_json()
         records = json.loads(dfnew).values()
         constants.db_instance.boltest.insert(records)
-
+    """
     return df
 
 

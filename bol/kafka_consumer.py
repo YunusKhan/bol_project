@@ -80,18 +80,20 @@ def get_message_from_consumer(consumer, split='False', kafka_client='None'):
     """
 
     logging.info("Implement getting message from kafka consumer")
-    data_frame = json.loads('' or 'null')
+    # data_frame = json.loads('' or 'null')
     if split == 'False':
         for message in consumer:
             temp_data = dill.loads(message.value)
             df_temp = pd.DataFrame(temp_data)
             df_new = df_temp.to_json()
             records = json.loads(df_new).values()
-            if data_frame.empty():
+            """
+            if data_frame is None:
                 data_frame = records
             else:
                 data_frame += records
             # logging.info(records)
+            """
             constants.db_instance.boltest.insert(records)
 
         # return data_frame
