@@ -13,7 +13,7 @@
 
 ```
 
-from main calls , important calls are below 
+# from main calls , important calls are below   
 
 df = stream_whole_data_set() - 
 	1. takes whole data set
@@ -42,3 +42,17 @@ year_wise = year_wise_data_set(df)
 
 year_wise_station_wise = year_wise_station_wise_data_set(df)
 not implemented but similar logic fundamentally 
+
+
+
+# Commands to run multi broker kakfa
+
+cd /cygdrive/c/kafka
+
+bin/zookeeper-server-start.sh config/zookeeper.properties  &
+bin/kafka-server-start.sh config/server.properties &
+bin/kafka-server-start.sh config/server-1.properties &
+bin/kafka-server-start.sh config/server-2.properties &
+bin/kafka-server-start.sh config/server-3.properties &
+bin/kafka-server-start.sh config/server-4.properties &
+bin/kafka-server-start.sh config/server-5.properties &
